@@ -5,6 +5,7 @@ using UnityEditor.Events;
 using UnityEngine;
 using UnityEngine.UI;
 using Vuforia;
+using Image = UnityEngine.UI.Image;
 
 /// <summary>
 /// Menu: ANDES-SIM > Configurar escenario 4.
