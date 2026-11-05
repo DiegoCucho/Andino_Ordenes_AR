@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -5,7 +7,8 @@ using TMPro;
 /// Va en cada ImageTarget_Orden_XX. Conecta en el DefaultObserverEventHandler de Vuforia:
 ///   On Target Found  -> OrderTarget.OnFound
 ///   On Target Lost   -> OrderTarget.OnLost
-/// (así este script no depende de Vuforia y compila antes de instalarlo).
+/// Al detectar el marcador: muestra la ficha con una animacion de entrada (C#),
+/// actualiza el inventario y abre el panel de clasificacion.
 /// </summary>
 public class OrderTarget : MonoBehaviour
 {
@@ -18,10 +21,20 @@ public class OrderTarget : MonoBehaviour
 
     public OrderData Data { get; private set; }
 
+    // animacion de entrada
+    readonly List<Transform> animados = new List<Transform>();
+    readonly List<Vector3> escalas = new List<Vector3>();
+    Coroutine anim;
+
     void Start()
     {
         Data = OrderDatabase.Find(orderId);
         if (ficha != null) ficha.SetActive(false);
+
+        Registrar(ficha != null ? ficha.transform : null);
+        Registrar(txtId); Registrar(txtMonto); Registrar(txtDestino);
+        Registrar(txtBeneficiario); Registrar(txtEstado); Registrar(txtMotivos);
+
         if (GameManager.I != null) GameManager.I.OnStateChanged += Refresh;
     }
 
@@ -30,18 +43,71 @@ public class OrderTarget : MonoBehaviour
         if (GameManager.I != null) GameManager.I.OnStateChanged -= Refresh;
     }
 
+    void Registrar(Component c) { if (c != null) Registrar(c.transform); }
+    void Registrar(Transform t)
+    {
+        if (t == null) return;
+        animados.Add(t);
+        escalas.Add(t.localScale);
+    }
+
     public void OnFound()
     {
         if (ficha != null) ficha.SetActive(true);
         Refresh();
         InventoryUI.Registrar(orderId);
+
         if (GameManager.I != null && Data != null && Data.estadoReal == "detenida_fandation")
             GameManager.I.RegisterEvidence("fandation");
+
+        OrdenesPanel.MostrarOrden(this);
+
+        if (anim != null) StopCoroutine(anim);
+        anim = StartCoroutine(PopIn());
     }
 
     public void OnLost()
     {
+        if (anim != null) { StopCoroutine(anim); anim = null; }
+        Restaurar();
         if (ficha != null) ficha.SetActive(false);
+        OrdenesPanel.OcultarOrden(this);
+    }
+
+    // Animacion: cada pieza de la ficha "salta" desde escala 0 con un pequeno rebote, una tras otra.
+    IEnumerator PopIn()
+    {
+        for (int i = 0; i < animados.Count; i++)
+            if (animados[i] != null) animados[i].localScale = Vector3.zero;
+
+        const float dur = 0.45f, delay = 0.07f;
+        float total = dur + delay * Mathf.Max(0, animados.Count - 1);
+        float t = 0f;
+        while (t < total)
+        {
+            t += Time.deltaTime;
+            for (int i = 0; i < animados.Count; i++)
+            {
+                if (animados[i] == null) continue;
+                float k = Mathf.Clamp01((t - delay * i) / dur);
+                animados[i].localScale = escalas[i] * EaseOutBack(k);
+            }
+            yield return null;
+        }
+        Restaurar();
+        anim = null;
+    }
+
+    void Restaurar()
+    {
+        for (int i = 0; i < animados.Count; i++)
+            if (animados[i] != null) animados[i].localScale = escalas[i];
+    }
+
+    static float EaseOutBack(float x)
+    {
+        const float c1 = 1.70158f, c3 = c1 + 1f;
+        return 1f + c3 * Mathf.Pow(x - 1f, 3f) + c1 * Mathf.Pow(x - 1f, 2f);
     }
 
     void Refresh()
