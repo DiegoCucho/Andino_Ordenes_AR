@@ -19,3 +19,6 @@ Proyecto ANDES-SIM (Banco Andino). Datos 100 % ficticios, basados en el robo al 
 
 ## Mapa de órdenes recomendado para los marcadores
 `ORD-01` pagada · `ORD-02` pagada · `ORD-05` «Fandation» · `ORD-06` no reenviada · `ORD-07` bloqueada · `ORD-20` bloqueada · `ORD-36` bloqueada
+
+## Marcadores (carpeta `Marcadores/`)
+Imágenes `ORD_01, 02, 03, 04, 05, 06, 07, 20` (.jpg, 1400x1000) para subir a Vuforia Target Manager, y `Marcadores_Ordenes.pdf` para imprimir (una por página).
