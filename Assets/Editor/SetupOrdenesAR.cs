@@ -36,6 +36,30 @@ public static class SetupOrdenesAR
         Debug.Log("ANDES-SIM: " + n + " ImageTargets configurados. Guarda la escena (Ctrl+S).");
     }
 
+    [MenuItem("ANDES-SIM/Ajustar textos de las fichas")]
+    public static void AjustarTextos()
+    {
+        int n = 0;
+        foreach (var ot in Object.FindObjectsByType<OrderTarget>(FindObjectsSortMode.None))
+        {
+            foreach (var t in ot.GetComponentsInChildren<TextMeshPro>(true))
+            {
+                float max = t.fontSizeMax > 0f && t.enableAutoSizing ? t.fontSizeMax : t.fontSize;
+                t.enableAutoSizing = true;
+                t.fontSizeMin = 0.1f;
+                t.fontSizeMax = max;
+                t.textWrappingMode = TextWrappingModes.NoWrap;
+                t.rectTransform.sizeDelta = new Vector2(0.85f, 0.1f);   // cabe dentro de la ficha
+                t.overflowMode = TextOverflowModes.Ellipsis;
+                EditorUtility.SetDirty(t);
+                n++;
+            }
+        }
+        UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+        Debug.Log("ANDES-SIM: " + n + " textos ajustados. Guarda la escena (Ctrl+S).");
+    }
+
     static void ConfigurarTarget(GameObject target, string orderId)
     {
         // Ficha: un cubo plano, hijo del target (1 unidad = ancho del marcador)
@@ -76,6 +100,9 @@ public static class SetupOrdenesAR
         var t = go.GetComponent<TextMeshPro>();
         t.text = texto;
         t.fontSize = size * 10f;
+        t.enableAutoSizing = true;
+        t.fontSizeMin = 0.1f;
+        t.fontSizeMax = size * 10f;
         t.fontStyle = style;
         t.alignment = TextAlignmentOptions.Center;
         t.color = Color.black;
