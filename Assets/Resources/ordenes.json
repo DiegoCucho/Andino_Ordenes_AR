@@ -1,0 +1,367 @@
+{
+  "ordenes": [
+    {
+      "id": "ORD-01",
+      "beneficiario": "LAS PALMERAS CUENTA 1",
+      "destino": "Manila",
+      "montoMillones": 20.25,
+      "estadoReal": "pagada",
+      "hora": "20:40",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-02",
+      "beneficiario": "LAS PALMERAS CUENTA 2",
+      "destino": "Manila",
+      "montoMillones": 20.25,
+      "estadoReal": "pagada",
+      "hora": "20:41",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-03",
+      "beneficiario": "LAS PALMERAS CUENTA 3",
+      "destino": "Manila",
+      "montoMillones": 20.25,
+      "estadoReal": "pagada",
+      "hora": "20:42",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-04",
+      "beneficiario": "LAS PALMERAS CUENTA 4",
+      "destino": "Manila",
+      "montoMillones": 20.25,
+      "estadoReal": "pagada",
+      "hora": "20:43",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-05",
+      "beneficiario": "SHALIKA FANDATION",
+      "destino": "Colombo",
+      "montoMillones": 20.0,
+      "estadoReal": "detenida_fandation",
+      "hora": "21:05",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-06",
+      "beneficiario": "ORIENTE FOUNDATION",
+      "destino": "Manila",
+      "montoMillones": 10.0,
+      "estadoReal": "no_reenviada",
+      "hora": "21:10",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-07",
+      "beneficiario": "CORAL TRADING",
+      "destino": "Manila",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:00",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-08",
+      "beneficiario": "PACIFIC HARBOR LTD",
+      "destino": "Colombo",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:05",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-09",
+      "beneficiario": "ISLA VERDE CORP",
+      "destino": "Cebu",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:10",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-10",
+      "beneficiario": "NORTE SUR IMPORT",
+      "destino": "Davao",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:15",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-11",
+      "beneficiario": "BAHIA AZUL SA",
+      "destino": "Quezon",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:20",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-12",
+      "beneficiario": "MAR DEL SUR LTD",
+      "destino": "Makati",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:25",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-13",
+      "beneficiario": "CORAL TRADING",
+      "destino": "Manila",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:30",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-14",
+      "beneficiario": "PACIFIC HARBOR LTD",
+      "destino": "Colombo",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:35",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-15",
+      "beneficiario": "ISLA VERDE CORP",
+      "destino": "Cebu",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:40",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-16",
+      "beneficiario": "NORTE SUR IMPORT",
+      "destino": "Davao",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:45",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-17",
+      "beneficiario": "BAHIA AZUL SA",
+      "destino": "Quezon",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:50",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-18",
+      "beneficiario": "MAR DEL SUR LTD",
+      "destino": "Makati",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "21:55",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-19",
+      "beneficiario": "CORAL TRADING",
+      "destino": "Manila",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:00",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-20",
+      "beneficiario": "PACIFIC HARBOR LTD",
+      "destino": "Colombo",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:05",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-21",
+      "beneficiario": "ISLA VERDE CORP",
+      "destino": "Cebu",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:10",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-22",
+      "beneficiario": "NORTE SUR IMPORT",
+      "destino": "Davao",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:15",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-23",
+      "beneficiario": "BAHIA AZUL SA",
+      "destino": "Quezon",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:20",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-24",
+      "beneficiario": "MAR DEL SUR LTD",
+      "destino": "Makati",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:25",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-25",
+      "beneficiario": "CORAL TRADING",
+      "destino": "Manila",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:30",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-26",
+      "beneficiario": "PACIFIC HARBOR LTD",
+      "destino": "Colombo",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:35",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-27",
+      "beneficiario": "ISLA VERDE CORP",
+      "destino": "Cebu",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:40",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-28",
+      "beneficiario": "NORTE SUR IMPORT",
+      "destino": "Davao",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:45",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-29",
+      "beneficiario": "BAHIA AZUL SA",
+      "destino": "Quezon",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:50",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-30",
+      "beneficiario": "MAR DEL SUR LTD",
+      "destino": "Makati",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "22:55",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-31",
+      "beneficiario": "CORAL TRADING",
+      "destino": "Manila",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "23:00",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-32",
+      "beneficiario": "PACIFIC HARBOR LTD",
+      "destino": "Colombo",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "23:05",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-33",
+      "beneficiario": "ISLA VERDE CORP",
+      "destino": "Cebu",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "23:10",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-34",
+      "beneficiario": "NORTE SUR IMPORT",
+      "destino": "Davao",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "23:15",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-35",
+      "beneficiario": "BAHIA AZUL SA",
+      "destino": "Quezon",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "23:20",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    },
+    {
+      "id": "ORD-36",
+      "beneficiario": "MAR DEL SUR LTD",
+      "destino": "Makati",
+      "montoMillones": 28.0,
+      "estadoReal": "bloqueada",
+      "hora": "23:25",
+      "beneficiarioNuevo": true,
+      "dobleAprobacion": false
+    }
+  ],
+  "beneficiariosValidos": [
+    "SHALIKA FOUNDATION"
+  ]
+}
