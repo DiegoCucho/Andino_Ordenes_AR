@@ -24,8 +24,8 @@ public class CreditosUI : MonoBehaviour
         "- TextMeshPro y fuente Liberation Sans (SIL Open Font License)\n\n" +
         "RECURSOS\n" +
         "- Marcadores y fichas: creados por el equipo con código (Python/Pillow, fuentes DejaVu y Liberation). Sin recursos de terceros.\n\n" +
-        "HERRAMIENTAS DE IA USADAS\n" +
-        "- Claude (Anthropic): apoyo en el código C#, los datos ficticios y el diseño de los marcadores.";
+        "USO DE IA\n" +
+        "- Claude (Anthropic): apoyo en el código y los datos ficticios.";
 
     void Start()
     {
