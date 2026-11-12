@@ -7,16 +7,6 @@ Proyecto ANDES-SIM (Banco Andino). Datos 100 % ficticios, basados en el robo al 
 - `Assets/Scripts/Core`: `GameManager` (modo Ataque/Defensa, `RegisterEvidence`, `ApplyDefense`, `EndScenario`), `ScenarioData`, `ModeToggleButton`.
 - `Assets/Scripts/Ordenes`: `OrderData`, `OrderTarget`, `RuleEngine`, `TypoDetector`, `InventoryUI`.
 
-## Montaje en Unity (pasos)
-1. Instalar Vuforia (`com.ptc.vuforia.engine`), pegar la licencia Basic en la ARCamera (**no subirla al repo**).
-2. Crear la escena `Ordenes_AR`: ARCamera de Vuforia + un objeto vacío `GameManager` con el script `GameManager`.
-3. Crear un `ScenarioData` (Assets > Create > ANDES-SIM > ScenarioData) y asignarlo al GameManager.
-4. Crear la base de datos de Vuforia con 6 a 8 imágenes (3 estrellas o más) y añadir `ImageTarget_Orden_01..08`.
-5. Prefab `Ficha_Orden`: un Cube con 5 TextMeshPro 3D (id, monto, destino, beneficiario, estado + motivos).
-6. En cada ImageTarget añadir `OrderTarget`, poner su `orderId` (p. ej. `ORD-05` = «Fandation») y arrastrar la ficha y los textos.
-7. En el `DefaultObserverEventHandler` de cada ImageTarget: *On Target Found* → `OrderTarget.OnFound`, *On Target Lost* → `OrderTarget.OnLost`.
-8. Canvas: un botón con `ModeToggleButton` y un panel con `InventoryUI` (TextMeshPro UGUI).
-
 ## Mapa de órdenes recomendado para los marcadores
 `ORD-01` pagada · `ORD-02` pagada · `ORD-05` «Fandation» · `ORD-06` no reenviada · `ORD-07` bloqueada · `ORD-20` bloqueada · `ORD-36` bloqueada
 
