@@ -61,6 +61,7 @@ public class OrderTarget : MonoBehaviour
             GameManager.I.RegisterEvidence("fandation");
 
         OrdenesPanel.MostrarOrden(this);
+        NarradorFases.OrdenDetectada(Data);
 
         if (anim != null) StopCoroutine(anim);
         anim = StartCoroutine(PopIn());
