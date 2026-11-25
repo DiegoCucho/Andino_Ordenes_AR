@@ -15,18 +15,16 @@ public class CreditosUI : MonoBehaviour
         "ANDES-SIM · Escenario 4: Las 36 órdenes (AR)\n" +
         "Proyecto académico basado en hechos reales (Banco de Bangladesh, 2016). BANCO ANDINO, sus personas, cuentas y datos son ficticios.\n\n" +
         "EQUIPO\n" +
-        "KIANU WILLIAM RETAMOZO LAVADO · Líder de proyecto y narrativa\n" +
-        "DIEGO FREDY CUCHO RIVERA · Desarrollador Unity (C#)\n" +
-        "ANYELO JHERAY VELITA LOZANO · Analista de ciberseguridad y QA\n\n" +
+        "[KIANU WILLIAM RETAMOZO LAVADO, Rol:Líder de proyecto y narrativa]\n\n" +
+        "[DIEGO FREDY CUCHO RIVERA, Rol:Desarrollador Unity (C#)]\n\n" +
+        "[ANYELO JHERAY VELITA LOZANO, Analista de ciberseguridad y QA]\n\n" +
         "HERRAMIENTAS\n" +
         "- Unity 6 (Unity Technologies)\n" +
         "- Vuforia Engine, licencia Basic (PTC Inc.)\n" +
         "- TextMeshPro y fuente Liberation Sans (SIL Open Font License)\n\n" +
         "RECURSOS\n" +
-        "- Marcadores y fichas: creados por el equipo con código (Python/Pillow, fuentes DejaVu y Liberation). Sin recursos de terceros.\n\n" +
-        "USO DE IA\n" +
-        "- Claude (Anthropic): apoyo en el código y los datos ficticios.";
-
+        "- Marcadores y fichas: creados por el equipo con código (Python/Pillow, fuentes DejaVu y Liberation). Sin recursos de terceros.\n\n";
+       
     void Start()
     {
         if (txt != null)

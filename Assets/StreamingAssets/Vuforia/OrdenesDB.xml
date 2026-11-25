@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="ord_20" size="0.300000 0.214286" />
+    <ImageTarget name="ord_07" size="0.300000 0.214286" />
+    <ImageTarget name="ord_06" size="0.300000 0.214286" />
+    <ImageTarget name="ord_05" size="0.300000 0.214286" />
+    <ImageTarget name="ord_04" size="0.300000 0.214286" />
+    <ImageTarget name="ord_03" size="0.300000 0.214286" />
+    <ImageTarget name="ord_02" size="0.300000 0.214286" />
+    <ImageTarget name="ord_01" size="0.100000 0.071429" />
+  </Tracking>
+</QCARConfig>

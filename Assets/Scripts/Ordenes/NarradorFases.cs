@@ -72,35 +72,78 @@ public class NarradorFases : MonoBehaviour
     public static void OrdenDetectada(OrderData o)
     {
         if (inst == null || o == null) return;
-        if (o.estadoReal == "detenida_fandation")
+        inst.NarrarOrden(o);
+    }
+
+    /// <summary>
+    /// Narra la orden segun el modo y su estado real. Busca primero un audio propio de la orden
+    /// (p. ej. ORD-01_ataque) y si no existe usa el de su categoria (orden_pagada, orden_bloqueada...).
+    /// </summary>
+    void NarrarOrden(OrderData o)
+    {
+        bool defensa = GameManager.I != null && GameManager.I.mode == SimMode.Defensa;
+        string modo = defensa ? "defensa" : "ataque";
+        string cat;
+        string titulo;
+        Color color;
+
+        if (defensa)
         {
-            inst.Hablar("analisis", "FASE 2 · ANÁLISIS\nValidación que detuvo «Fandation»", new Color(1f, 0.75f, 0.2f));
+            cat = "orden_retenida";
+            titulo = o.id + " · RETENIDA\nMonto, horario, beneficiario y doble aprobación";
+            color = new Color(0.35f, 0.7f, 1f);
+        }
+        else if (o.estadoReal == "pagada")
+        {
+            cat = "orden_pagada";
+            titulo = o.id + " · PAGADA\nUS$" + o.montoMillones.ToString("0.##") + " M a " + o.destino;
+            color = new Color(1f, 0.45f, 0.4f);
+        }
+        else if (o.estadoReal == "bloqueada")
+        {
+            cat = "orden_bloqueada";
+            titulo = o.id + " · BLOQUEADA\nEl banco detuvo la orden";
+            color = new Color(0.3f, 1f, 0.6f);
+        }
+        else if (o.estadoReal == "detenida_fandation")
+        {
+            cat = "analisis";
+            titulo = "FASE 2 · ANÁLISIS\nValidación que detuvo «Fandation»";
+            color = new Color(1f, 0.75f, 0.2f);
         }
         else
         {
-            // audio opcional por orden: Resources/Audio/ORD-01, ORD-02...
-            inst.Hablar(o.id, null, Color.white);
+            cat = "orden_noreenviada";
+            titulo = o.id + " · NO REENVIADA\nLa orden nunca llegó a salir";
+            color = Color.white;
         }
+
+        Hablar(o.id + "_" + modo, new[] { o.id + "_" + modo, cat }, titulo, color);
     }
 
     void MostrarFase(bool defensa)
     {
         if (defensa)
-            Hablar("defensa", "FASE 3 · DEFENSA\nLas 36 órdenes quedan retenidas", new Color(0.35f, 0.7f, 1f));
+            Hablar("fase_defensa", new[] { "defensa" }, "FASE 3 · DEFENSA\nLas 36 órdenes quedan retenidas", new Color(0.35f, 0.7f, 1f));
         else
-            Hablar("ataque", "FASE 1 · ATAQUE 2016\nLas 36 órdenes del robo", new Color(1f, 0.45f, 0.4f));
+            Hablar("fase_ataque", new[] { "ataque" }, "FASE 1 · ATAQUE 2016\nLas 36 órdenes del robo", new Color(1f, 0.45f, 0.4f));
     }
 
     // ---------- narrador + cartel ----------
-    void Hablar(string clip, string textoCartel, Color color)
+    void Hablar(string clave, string[] clips, string textoCartel, Color color)
     {
         float t;
-        if (ultimaVez.TryGetValue(clip, out t) && Time.time - t < EsperaRepetir) return;
-        ultimaVez[clip] = Time.time;
+        if (ultimaVez.TryGetValue(clave, out t) && Time.time - t < EsperaRepetir) return;
+        ultimaVez[clave] = Time.time;
 
         if (textoCartel != null) Cartel(textoCartel, color);
 
-        var c = Resources.Load<AudioClip>("Audio/" + clip);
+        AudioClip c = null;
+        foreach (var nombre in clips)
+        {
+            c = Resources.Load<AudioClip>("Audio/" + nombre);
+            if (c != null) break;
+        }
         if (c != null && voz != null)
         {
             voz.Stop();

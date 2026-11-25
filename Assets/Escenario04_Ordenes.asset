@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a72dab014211b741810ca78ac2e4e4a, type: 3}
+  m_Name: Escenario04_Ordenes
+  m_EditorClassIdentifier: Assembly-CSharp::ScenarioData
+  numero: 4
+  titulo: "Las 36 \xF3rdenes"
+  fecha: 4 y 5 feb 2016
+  historia: "Las 36 \xF3rdenes viajan al Banco Corresponsal Internacional. 35 son
+    rechazadas por formato y reenviadas; al final se bloquean 30 y pasan 5."
+  totalOrdenes: 36
+  totalMillones: 951
